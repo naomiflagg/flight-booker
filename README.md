@@ -1,4 +1,4 @@
-# README
+# Flight Booker
 
 Basic one-way flight booking web application, done as part of The Odin Project's [Ruby on Rails curriculum](theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms).
 

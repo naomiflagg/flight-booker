@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  duration: MyString
+  datetime: 2020-10-14 16:00:04
+  departure_airport: one
+  arrival_airport: one
+
+two:
+  duration: MyString
+  datetime: 2020-10-14 16:00:04
+  departure_airport: two
+  arrival_airport: two
