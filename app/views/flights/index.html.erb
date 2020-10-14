@@ -1,0 +1,8 @@
+<h2>Find a flight</h2>
+
+<%= simple_form_for :search, method: 'GET', url: root_path do |f| %>
+  <%= f.input :departure_airport, collection: Airport.pluck(:code) %>
+  <%= f.input :arrival_airport, collection: Airport.pluck(:code) %>
+  <%= f.input :num_passengers, collection: 1..4, label: 'Number of passengers' %>
+  <%= f.input :date, collection: Flight.pluck(:datetime), label: 'Flight date and time' %>
+<% end %>
