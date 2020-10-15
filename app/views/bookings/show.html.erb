@@ -1,1 +1,14 @@
-<%= @booking.flight %><%= @booking.passengers.pluck(:name) %>
+<h2>Your booking</h2>
+<h3>Depart: </h3><%= @booking.flight.departure_airport.code %>
+<h3>Arrive: </h3><%= @booking.flight.arrival_airport.code %>
+<h3>Departure time: </h3><%= @booking.flight.clean_time %>
+<h3>Duration: </h3><%= @booking.flight.duration %>
+<h3>Passengers: </h3>
+<ul>
+  <% @booking.passengers.each do |passenger| %>
+    <li>
+      <Strong>Name: </Strong><%= passenger.name %><br>
+      <Strong>Email: </Strong><%= passenger.email %><br>
+    </li>
+  <% end %>
+</ul>
