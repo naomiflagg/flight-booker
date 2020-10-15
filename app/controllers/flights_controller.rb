@@ -1,5 +1,7 @@
 class FlightsController < ApplicationController
   def index
-    @flights = Flight.all
+    @airports = Airport.all
+    @dates = Flight.order(:date).pluck(:date)
+    @flights = Flight.search(params[:search])
   end
 end

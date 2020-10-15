@@ -1,0 +1,13 @@
+<h2>Flight results</h2>
+<%= simple_form_for :booking, url: new_booking_path, method: 'GET' do |f| %>
+  <%= f.input :flight, collection: @flights, as: :radio_buttons,
+  label_method: lambda { |flight|
+    "Depart: #{flight.departure_airport.code}\n
+      Arrive: #{flight.arrival_airport.code}\n
+      Date: #{flight.date}\n
+      Time: #{flight.clean_time}\n
+      Duration: #{flight.duration}"
+  }, label: 'Select a flight' %>
+  <%= f.input :num_passengers, as: :hidden, input_html: { value: params[:search][:num_passengers] } %>
+  <%= f.button :submit, 'Submit' %>
+<% end %>
