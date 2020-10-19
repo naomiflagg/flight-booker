@@ -9,6 +9,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     if @booking.save
+      @booking.passengers.each do |pass|
+        PassengerMailer.with(passenger: pass, booking: @booking).after_booking_email.deliver_now
+      end
       render 'show'
     else
       @flight = Flight.find(params[:flight_id])

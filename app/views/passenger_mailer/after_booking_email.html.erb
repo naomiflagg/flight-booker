@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thanks for booking, <%= @passenger.name %></h1>
+    <p>
+      Your booking was successful.<br>
+      To view your booking, follow this link:
+      <%= link_to 'my booking', booking_url(@booking) %>
+    </p>
+    <p>We hope that you enjoy your trip!</p>
+  </body>
+</html>
